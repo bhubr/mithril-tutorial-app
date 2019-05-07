@@ -1,11 +1,20 @@
 import m from 'mithril';
 import UserList from './views/UserList';
 import UserForm from './views/UserForm';
+import Layout from './views/Layout';
 
 // remove hashbang (later)
 // m.route.prefix('');
 
 m.route(document.body, '/list', {
-  '/list': UserList,
-  '/edit/:id': UserForm,
+  '/list': {
+    render() {
+      return m(Layout, m(UserList));
+    }
+  },
+  '/edit/:id': {
+    render(vnode) {
+      return m(Layout, m(UserForm, vnode.attrs));
+    }
+  }
 });
