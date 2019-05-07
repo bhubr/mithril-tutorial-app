@@ -13,7 +13,8 @@ module.exports = {
     ecmaVersion: 2018,
   },
   rules: {
-    'prefer-import/prefer-import-over-require': ['error']
+    'prefer-import/prefer-import-over-require': ['error'],
+    'comma-dangle': 0
   },
   plugins: [
     'prefer-import'
