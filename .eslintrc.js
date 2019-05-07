@@ -13,5 +13,9 @@ module.exports = {
     ecmaVersion: 2018,
   },
   rules: {
+    'prefer-import/prefer-import-over-require': ['error']
   },
+  plugins: [
+    'prefer-import'
+  ]
 };
