@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack src/index.js --output bin/app.js -d --watch",
+    "start": "webpack -d --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "./node_modules/eslint/bin/eslint.js src/",
     "lint-fix": "./node_modules/eslint/bin/eslint.js --fix src/",
@@ -17,9 +17,14 @@
     "mithril": "^2.0.0-rc.4"
   },
   "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/plugin-transform-react-jsx": "^7.3.0",
+    "@babel/preset-env": "^7.4.4",
+    "babel-loader": "^8.0.5",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-mithril": "^0.1.1",
     "eslint-plugin-prefer-import": "0.0.1",
     "stylelint": "^10.0.1",
     "stylelint-config-standard": "^18.3.0",

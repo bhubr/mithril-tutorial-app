@@ -5,12 +5,23 @@ import User from '../models/User';
 export default {
   oninit: User.loadList,
   view() {
-    return m('.user-list', User.list.map(
-      user => m(
-        'a.user-list-item',
-        { href: `/edit/${user.id}`, oncreate: m.route.link },
-        `${user.firstName} ${user.lastName}`
-      )
-    ));
+    return (
+      <div class="user-list">
+      {
+        User.list.map(
+          user => (
+            <a
+              key={user.id}
+              class="user-list-item"
+              href={`/edit/${user.id}`}
+              oncreate={m.route.link}
+            >
+              {user.firstName} {user.lastName}
+            </a>
+          )
+        )
+      }
+      </div>
+    );
   },
 };
